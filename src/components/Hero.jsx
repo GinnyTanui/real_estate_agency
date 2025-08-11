@@ -1,7 +1,13 @@
 import React from 'react';
 import bgImage from '../images/hero_image.jpg'; 
-
+import { useNavigate } from 'react-router-dom';
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/contact');
+  };
+
   return (
     <section
       className="relative bg-cover bg-center bg-no-repeat py-20 px-6 text-white"
@@ -22,7 +28,10 @@ const Hero = () => {
           tailored for Kenyan agents to attract more inquiries and close deals faster.
         </p>
 
-        <button className="px-8 py-4 bg-[#E67E22] hover:bg-[#cf6f1c] text-white font-semibold rounded-lg shadow-lg transition">
+        <button 
+        className="px-8 py-4 bg-[#E67E22] hover:bg-[#cf6f1c] text-white font-semibold rounded-lg shadow-lg transition"
+        onClick={handleButtonClick}
+        >
           Book My Free Demo
         </button>
 
